@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<sparql xmlns="http://www.w3.org/2005/sparql-results#">
+  <head>
+    <variable name="生物过程"/>
+    <variable name="原料"/>
+  </head>
+  <results>
+    <result>
+      <binding name="生物过程">
+        <uri>http://www.co-ode.org/ontologies/ont.owl#二氧化碳的固定</uri>
+      </binding>
+    </result>
+  </results>
+</sparql>

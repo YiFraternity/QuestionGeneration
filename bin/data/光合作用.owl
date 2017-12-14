@@ -1,0 +1,840 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/12261/ontologies/2017/10/untitled-ontology-22#"
+     xml:base="http://www.semanticweb.org/12261/ontologies/2017/10/untitled-ontology-22"
+     xmlns:ont="http://www.co-ode.org/ontologies/ont.owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/12261/ontologies/2017/10/untitled-ontology-22"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#name -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#name"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#主要吸收 -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#主要吸收"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#产物 -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#产物"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#位于 -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#位于"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#催化剂 -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#催化剂"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#包含元素 -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#包含元素"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#包括 -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#包括"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#原料 -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#原料"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#发生场所 -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#发生场所"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#含量 -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#含量"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#吸收 -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#吸收"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#外部影响因素 -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#外部影响因素"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#子过程 -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#子过程"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#条件 -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#条件"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#标记元素 -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#标记元素"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#组成部分 -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#组成部分"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#颜色 -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#颜色"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#元素 -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#元素">
+        <rdfs:name>元素</rdfs:name>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#因素 -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#因素">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#外部影响因素"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#过程"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:name>因素</rdfs:name>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#技术 -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#技术">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#标记元素"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#元素"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:name>技术</rdfs:name>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#数值 -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#数值">
+        <rdfs:name>数值</rdfs:name>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#物质 -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#物质">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#位于"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#生物组织"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#催化剂"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#过程"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#包含元素"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#元素"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#条件"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#过程"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:name>物质</rdfs:name>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#生物组织 -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#生物组织">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#组成部分"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#生物组织"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:name>生物组织</rdfs:name>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#色素 -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#色素">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#主要吸收"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#数值"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#位于"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#生物组织"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#包括"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#色素"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#含量"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#数值"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#吸收"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#物质"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#条件"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#过程"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#颜色"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#数值"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:name>色素</rdfs:name>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#过程 -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#过程">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#产物"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#物质"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#原料"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#物质"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#发生场所"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#生物组织"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#子过程"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#过程"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:name>过程</rdfs:name>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#ADP -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#ADP">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#物质"/>
+        <rdfs:name>ADP</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#ATP -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#ATP">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#物质"/>
+        <rdfs:name>ATP</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#ATP合成酶 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#ATP合成酶">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#物质"/>
+        <ont:位于 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#类囊体薄膜"/>
+        <ont:催化剂 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ATP的合成"/>
+        <rdfs:name>ATP合成酶</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#ATP的合成 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#ATP的合成">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#过程"/>
+        <ont:产物 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ATP"/>
+        <ont:原料 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ADP"/>
+        <ont:原料 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Pi"/>
+        <rdfs:name>ATP的合成</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#Pi -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#Pi">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#物质"/>
+        <rdfs:name>Pi</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#三碳化合物 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#三碳化合物">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#物质"/>
+        <rdfs:name>三碳化合物</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#三碳化合物的还原 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#三碳化合物的还原">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#过程"/>
+        <ont:产物 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ADP"/>
+        <ont:产物 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#Pi"/>
+        <ont:产物 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#五碳化合物"/>
+        <ont:产物 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#含碳的有机物"/>
+        <ont:原料 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ATP"/>
+        <ont:原料 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#三碳化合物"/>
+        <ont:原料 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#还原氢"/>
+        <rdfs:name>三碳化合物的还原</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#二氧化碳 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#二氧化碳">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#物质"/>
+        <ont:包含元素 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#氧"/>
+        <ont:包含元素 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#碳"/>
+        <rdfs:name>二氧化碳</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#二氧化碳的固定 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#二氧化碳的固定">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#过程"/>
+        <ont:产物 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#三碳化合物"/>
+        <ont:原料 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#二氧化碳"/>
+        <ont:原料 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#五碳化合物"/>
+        <rdfs:name>二氧化碳的固定</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#二氧化碳的浓度 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#二氧化碳的浓度">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#因素"/>
+        <ont:外部影响因素 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#光合作用"/>
+        <rdfs:name>二氧化碳的浓度</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#五碳化合物 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#五碳化合物">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#物质"/>
+        <rdfs:name>五碳化合物</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#光反应 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#光反应">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#过程"/>
+        <ont:发生场所 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#类囊体薄膜"/>
+        <ont:子过程 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ATP的合成"/>
+        <ont:子过程 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#水的光解"/>
+        <rdfs:name>光反应</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#光合作用 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#光合作用">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#过程"/>
+        <ont:子过程 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#光反应"/>
+        <ont:子过程 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#暗反应"/>
+        <rdfs:name>光合作用</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#光合色素 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#光合色素">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#色素"/>
+        <ont:位于 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#类囊体薄膜"/>
+        <ont:包括 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#叶绿素"/>
+        <ont:包括 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#类胡萝卜素"/>
+        <ont:吸收 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#光能"/>
+        <ont:条件 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#水的光解"/>
+        <rdfs:name>光合色素</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#光照的强弱 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#光照的强弱">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#因素"/>
+        <ont:外部影响因素 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#光合作用"/>
+        <rdfs:name>光照的强弱</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#光照的时长 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#光照的时长">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#因素"/>
+        <ont:外部影响因素 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#光合作用"/>
+        <rdfs:name>光照的时长</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#光的成分 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#光的成分">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#因素"/>
+        <ont:外部影响因素 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#光合作用"/>
+        <rdfs:name>光的成分</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#光能 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#光能">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#物质"/>
+        <ont:条件 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ATP的合成"/>
+        <ont:条件 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#水的光解"/>
+        <rdfs:name>光能</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#叶绿体 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#叶绿体">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#生物组织"/>
+        <ont:组成部分 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#叶绿体双层膜"/>
+        <ont:组成部分 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#叶绿体基质"/>
+        <ont:组成部分 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#类囊体薄膜"/>
+        <rdfs:name>叶绿体</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#叶绿体双层膜 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#叶绿体双层膜">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#生物组织"/>
+        <rdfs:name>叶绿体双层膜</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#叶绿体基质 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#叶绿体基质">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#生物组织"/>
+        <rdfs:name>叶绿体基质</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#叶绿素 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#叶绿素">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#色素"/>
+        <ont:包括 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#叶绿素a"/>
+        <ont:包括 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#叶绿素b"/>
+        <ont:含量 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#约3/4"/>
+        <rdfs:name>叶绿素</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#叶绿素a -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#叶绿素a">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#色素"/>
+        <ont:主要吸收 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#红光"/>
+        <ont:主要吸收 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#蓝紫光"/>
+        <ont:颜色 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#蓝绿色"/>
+        <rdfs:name>叶绿素a</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#叶绿素b -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#叶绿素b">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#色素"/>
+        <ont:主要吸收 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#红光"/>
+        <ont:主要吸收 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#蓝紫光"/>
+        <ont:颜色 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#黄绿色"/>
+        <rdfs:name>叶绿素b</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#叶黄素 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#叶黄素">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#色素"/>
+        <ont:主要吸收 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#蓝紫光"/>
+        <ont:颜色 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#黄色"/>
+        <rdfs:name>叶黄素</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#同位素标记法 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#同位素标记法">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#技术"/>
+        <ont:标记元素 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#氧"/>
+        <ont:标记元素 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#碳"/>
+        <rdfs:name>同位素标记法</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#含碳的有机物 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#含碳的有机物">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#物质"/>
+        <rdfs:name>含碳的有机物</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#暗反应 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#暗反应">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#过程"/>
+        <ont:发生场所 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#叶绿体基质"/>
+        <ont:子过程 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#三碳化合物的还原"/>
+        <ont:子过程 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#二氧化碳的固定"/>
+        <rdfs:name>暗反应</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#橙黄色 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#橙黄色">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#数值"/>
+        <rdfs:name>橙黄色</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#氧 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#氧">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#元素"/>
+        <rdfs:name>氧</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#氧气 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#氧气">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#物质"/>
+        <rdfs:name>氧气</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#水 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#水">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#物质"/>
+        <rdfs:name>水</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#水分的多少 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#水分的多少">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#因素"/>
+        <ont:外部影响因素 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#光合作用"/>
+        <rdfs:name>水分的多少</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#水的光解 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#水的光解">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#过程"/>
+        <ont:产物 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#氧气"/>
+        <ont:产物 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#还原氢"/>
+        <ont:原料 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#水"/>
+        <rdfs:name>水的光解</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#温度的高低 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#温度的高低">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#因素"/>
+        <rdfs:name>温度的高低</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#矿质元素 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#矿质元素">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#因素"/>
+        <ont:外部影响因素 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#光合作用"/>
+        <rdfs:name>矿质元素</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#碳 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#碳">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#元素"/>
+        <rdfs:name>碳</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#碳反应酶 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#碳反应酶">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#物质"/>
+        <ont:位于 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#叶绿体基质"/>
+        <ont:催化剂 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#三碳化合物的还原"/>
+        <ont:催化剂 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#二氧化碳的固定"/>
+        <rdfs:name>碳反应酶</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#类囊体薄膜 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#类囊体薄膜">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#生物组织"/>
+        <rdfs:name>类囊体薄膜</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#类胡萝卜素 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#类胡萝卜素">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#色素"/>
+        <ont:包括 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#叶黄素"/>
+        <ont:包括 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#胡萝卜素"/>
+        <ont:含量 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#约1/4"/>
+        <rdfs:name>类胡萝卜素</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#红光 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#红光">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#数值"/>
+        <rdfs:name>红光</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#胡萝卜素 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#胡萝卜素">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#色素"/>
+        <ont:主要吸收 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#蓝紫光"/>
+        <ont:颜色 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#橙黄色"/>
+        <rdfs:name>胡萝卜素</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#蓝紫光 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#蓝紫光">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#数值"/>
+        <rdfs:name>蓝紫光</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#蓝绿色 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#蓝绿色">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#数值"/>
+        <rdfs:name>蓝绿色</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#还原氢 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#还原氢">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#物质"/>
+        <rdfs:name>还原氢</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#黄绿色 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#黄绿色">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#数值"/>
+        <rdfs:name>黄绿色</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#黄色 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#黄色">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#数值"/>
+        <rdfs:name>黄色</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#约1/4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#约1/4">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#数值"/>
+        <rdfs:name>约1/4</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#约3/4 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#约3/4">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#数值"/>
+        <rdfs:name>约3/4</rdfs:name>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+

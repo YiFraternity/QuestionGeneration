@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<sparql xmlns="http://www.w3.org/2005/sparql-results#">
+  <head>
+    <variable name="光合作用过程"/>
+    <variable name="原料"/>
+    <variable name="生成物"/>
+  </head>
+  <results>
+    <result>
+      <binding name="原料">
+        <literal>http://www.co-ode.org/ontologies/ont.owl#Pi,http://www.co-ode.org/ontologies/ont.owl#ADP</literal>
+      </binding>
+      <binding name="生成物">
+        <literal>http://www.co-ode.org/ontologies/ont.owl#ATP</literal>
+      </binding>
+    </result>
+  </results>
+</sparql>

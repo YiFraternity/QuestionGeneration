@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<sparql xmlns="http://www.w3.org/2005/sparql-results#">
+  <head>
+    <variable name="子过程"/>
+  </head>
+  <results>
+    <result>
+      <binding name="子过程">
+        <uri>http://www.co-ode.org/ontologies/ont.owl#光反应</uri>
+      </binding>
+    </result>
+    <result>
+      <binding name="子过程">
+        <uri>http://www.co-ode.org/ontologies/ont.owl#暗反应</uri>
+      </binding>
+    </result>
+  </results>
+</sparql>

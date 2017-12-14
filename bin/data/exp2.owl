@@ -1,0 +1,327 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/12261/ontologies/2017/10/untitled-ontology-21#"
+     xml:base="http://www.semanticweb.org/12261/ontologies/2017/10/untitled-ontology-21"
+     xmlns:ont="http://www.co-ode.org/ontologies/ont.owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/12261/ontologies/2017/10/untitled-ontology-21"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#id -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#id"/>
+    
+
+
+    <!-- http://www.w3.org/2000/01/rdf-schema#name -->
+
+    <owl:AnnotationProperty rdf:about="http://www.w3.org/2000/01/rdf-schema#name"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#包括 -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#包括"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#变化 -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#变化"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#影响 -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#影响"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#涉及 -->
+
+    <owl:ObjectProperty rdf:about="http://www.co-ode.org/ontologies/ont.owl#涉及"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#变化值 -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#变化值"/>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#变量 -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#变量">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#变化"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#变化值"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#影响"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#变量"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#实验 -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#实验">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#包括"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#阶段"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#阶段 -->
+
+    <owl:Class rdf:about="http://www.co-ode.org/ontologies/ont.owl#阶段">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.co-ode.org/ontologies/ont.owl#涉及"/>
+                <owl:someValuesFrom rdf:resource="http://www.co-ode.org/ontologies/ont.owl#变量"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#二氧化碳2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#二氧化碳2">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#变量"/>
+        <ont:变化 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#减少"/>
+        <ont:影响 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#光合作用强度2"/>
+        <rdfs:name>二氧化碳</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#光合作用实验 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#光合作用实验">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#实验"/>
+        <ont:包括 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#阶段一"/>
+        <ont:包括 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#阶段三"/>
+        <ont:包括 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#阶段二"/>
+        <rdfs:name>光合作用实验</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#光合作用强度1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#光合作用强度1">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#变量"/>
+        <ont:变化 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#增强"/>
+        <rdfs:name>光合作用强度1</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#光合作用强度2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#光合作用强度2">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#变量"/>
+        <ont:变化 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#减弱"/>
+        <rdfs:name>光合作用强度2</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#光合作用强度3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#光合作用强度3">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#变量"/>
+        <ont:变化 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#减弱"/>
+        <rdfs:name>光合作用强度3</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#光照1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#光照1">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#变量"/>
+        <ont:变化 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#增强"/>
+        <ont:影响 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#光合作用强度1"/>
+        <rdfs:name>光照</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#光照2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#光照2">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#变量"/>
+        <ont:变化 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#增强"/>
+        <ont:影响 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#温度2"/>
+        <rdfs:name>光照</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#光照3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#光照3">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#变量"/>
+        <ont:变化 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#减弱"/>
+        <ont:影响 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#光合作用强度3"/>
+        <rdfs:name>光照</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#关闭 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#关闭">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#变化值"/>
+        <rdfs:name>关闭</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#减少 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#减少">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#变化值"/>
+        <rdfs:name>减少</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#减弱 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#减弱">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#变化值"/>
+        <rdfs:name>减弱</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#增强 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#增强">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#变化值"/>
+        <rdfs:name>增强</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#气孔2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#气孔2">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#变量"/>
+        <ont:变化 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#关闭"/>
+        <ont:影响 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#二氧化碳2"/>
+        <rdfs:name>气孔</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#温度2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#温度2">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#变量"/>
+        <ont:变化 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#增强"/>
+        <ont:影响 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#气孔2"/>
+        <rdfs:name>温度</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#阶段一 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#阶段一">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#阶段"/>
+        <ont:涉及 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#光合作用强度1"/>
+        <ont:涉及 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#光照1"/>
+        <rdfs:name>AB</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#阶段三 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#阶段三">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#阶段"/>
+        <ont:涉及 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#光合作用强度3"/>
+        <ont:涉及 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#光照3"/>
+        <rdfs:name>DE</rdfs:name>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.co-ode.org/ontologies/ont.owl#阶段二 -->
+
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#阶段二">
+        <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#阶段"/>
+        <ont:涉及 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#二氧化碳2"/>
+        <ont:涉及 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#光合作用强度2"/>
+        <ont:涉及 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#光照2"/>
+        <ont:涉及 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#气孔2"/>
+        <ont:涉及 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#温度2"/>
+        <rdfs:name>BC</rdfs:name>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
+
