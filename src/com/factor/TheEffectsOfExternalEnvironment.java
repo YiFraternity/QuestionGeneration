@@ -8,14 +8,12 @@ import com.extend.GetMaterial;
 /***
  * @Copyright(c),2017-2018
  * @Project 光合作用自动出题
- * @Comments 获取外界环境对光合作用的影响
- * @Example 问：光能如何影响光合作用
- *          答：光能是水的光解的条件，水的光解是光反应的子过程，光反应是光合作用的子过程
- *             光能通过影响水的光解，从而影响光反应，影响光合作用。
+ * @Comments 得到影响光合作用的条件
+ * @Example [光合作用  光反应  ATP的合成  光能]...
  * @JDKversion JDK1.8
- * @CreatorDate 2017-9
+ * @CreatorDate 2017-12-6
  * @ModifiedBy 刘宇航
- * @ModifiedDate 2017-11-20
+ * @ModifiedDate 2017-12-6
  * @ModifiedReason 完善代码，对代码进行优化
  * @Version 2.0.0
  * @author User

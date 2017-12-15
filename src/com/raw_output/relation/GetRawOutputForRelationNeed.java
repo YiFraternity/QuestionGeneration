@@ -37,17 +37,11 @@ public class GetRawOutputForRelationNeed extends SPARQLParse{
 	
 	private static final String strFilePath = "./src/data/";
 	private static final String strFileName = "光合作用.owl";
-	
 	private static final String strSubFilePath="./src/data/raw_output/";
 	private static final String strRawOutputFileName = "raw_output.txt";
-	
 	private static final String strPrefix = "http://www.co-ode.org/ontologies/ont.owl#";
 	
-	/**
-	 * @Comments 无参构造函数
-	 */
 	protected GetRawOutputForRelationNeed() {}
-	
 	/***
 	 * @Comments 含参构造函数
 	 * @param strFile
@@ -60,10 +54,9 @@ public class GetRawOutputForRelationNeed extends SPARQLParse{
 				throw new IllegalArgumentException("file:"+strFileName+"not found");
 			}
 			model=ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
-			//read the RDF/XML File
-			model.read(in,"");
-			//Write it to standard out
-			model.write(System.out);
+			
+			model.read(in,"");      //read the RDF/XML File
+			model.write(System.out);//Write it to standard out
 	}
 	
 	/***
@@ -78,19 +71,15 @@ public class GetRawOutputForRelationNeed extends SPARQLParse{
  		String strPredicate="<"+strPrefix+"子过程>";
  		String strBio = "<"+strPrefix+strBioprocess+">";
  		
- 		//含有前缀的子过程数组
- 		ArrayList <String>arrlistSubprocessWithPrefix = new ArrayList<String>();
- 		//不含前缀的子过程数组
- 		ArrayList<String> arrlistSubprocessNoPrefix = new ArrayList<String>();
+ 		ArrayList<String> arrlistSubprocessWithPrefix = new ArrayList<String>();//含有前缀的子过程数组
+ 		ArrayList<String> arrlistSubprocessNoPrefix = new ArrayList<String>();  //不含前缀的子过程数组
  		
 		ResultSet result = super.findBioprocessFromParentbio(strBio, strPredicate);
 		String result_sub = ResultSetFormatter.asXMLString(result);
 		opfl.writeToFile(strFile,result_sub);
 		arrlistSubprocessWithPrefix=opfl.readXMLFileAboutSubprocess(strFile);
 		
-		//销毁对象
-		opfl=null;
-
+		opfl=null;//销毁对象
 		//去掉子过程的前缀
 		while(arrlistSubprocessWithPrefix.size()>0) {
 			String strEachBioprocess = arrlistSubprocessWithPrefix.get(0).replaceAll(strPrefix, "");
@@ -118,10 +107,8 @@ public class GetRawOutputForRelationNeed extends SPARQLParse{
  		String strPredicate="<"+strPrefix+"子过程>";
  		String strBio = "<"+strPrefix+strBioprocess+">";
  		
- 		//含有前缀父过程的数组
- 		ArrayList<String> arrListParentproWithPrefix = new ArrayList<String>();
- 		//不含前缀父过程的数组
- 		ArrayList<String> arrListParentproWithoutPrefix = new ArrayList<String>();
+ 		ArrayList<String> arrListParentproWithPrefix = new ArrayList<String>();   //含有前缀父过程的数组
+ 		ArrayList<String> arrListParentproWithoutPrefix = new ArrayList<String>();//不含前缀父过程的数组
  		
  		ResultSet result = super.findParentbioFromBioprocess(strBio, strPredicate);
  		String strResult = ResultSetFormatter.asXMLString(result);
@@ -158,17 +145,13 @@ public class GetRawOutputForRelationNeed extends SPARQLParse{
  		ResultSet subprocess = super.findRawFromBioprocess(strBio, strPredicateForRaw);
 		String strRawForFound= ResultSetFormatter.asXMLString(subprocess);
 		opfl.writeToFile(strFile,strRawForFound);
-		 //读取XML文件
-		ArrayList<String> arrlist=opfl.readXMLFileAboutSubprocess(strFile);
-//		System.out.print("原料:");
+		 
+		ArrayList<String> arrlist=opfl.readXMLFileAboutSubprocess(strFile);      //读取XML文件
 		for(int i=0;i<arrlist.size();i++){
 			String strRawForList=arrlist.get(i);
 			String strRawForListReplace=strRawForList.replaceAll(strPrefix, "");  //去掉前缀
-//			System.out.print(strRawForListReplace+" ");
 			arrListRaw.add(strRawForListReplace);
 		}
-//		System.out.print("\n");
-		//销毁对象
 		opfl=null;
  	}
  	
@@ -191,17 +174,13 @@ public class GetRawOutputForRelationNeed extends SPARQLParse{
  		ResultSet subprocess = super.findOutputFromBioprocess(strBio, strPredicateForOutput);
 		String strOutputForFound= ResultSetFormatter.asXMLString(subprocess);
 		opfl.writeToFile(strFile,strOutputForFound);
-		 //读取XML文件
-		ArrayList<String> arrlist=opfl.readXMLFileAboutSubprocess(strFile);
-//		System.out.print("产物:");
+		ArrayList<String> arrlist=opfl.readXMLFileAboutSubprocess(strFile);            //读取XML文件
+		
 		for(int i=0;i<arrlist.size();i++){
 			String strOutputForList=arrlist.get(i);
 			String strOutputForListReplace=strOutputForList.replaceAll(strPrefix, "");  //去掉前缀
-//			System.out.print(strOutputForListReplace+" ");
 			arrListOutput.add(strOutputForListReplace);
 		}
-//		System.out.print("\n");
-		//销毁对象
 		opfl=null;
  	}
  	
@@ -217,17 +196,14 @@ public class GetRawOutputForRelationNeed extends SPARQLParse{
  	 * @return
  	 */
  	protected ArrayList<String> getBioprocessFromRaw(String strRaw){
- 		
  		String strRawWithPrefix = "<"+strPrefix+strRaw+">";
  		String strPredicate = "<"+strPrefix+"原料>";
  		OperateFile opfl = new OperateFile();
  		
  		String strFile = strSubFilePath + "bioprocess.xml";
  		
- 		//含有前缀的生物过程的数组
- 		ArrayList<String> arrListBioprocessWithPrefix = new ArrayList<String>();
- 		//不含前缀的生物过程的数组
- 		ArrayList<String> arrListBioprocessWithoutPrefix = new ArrayList<String>();
+ 		ArrayList<String> arrListBioprocessWithPrefix = new ArrayList<String>();   //含有前缀的生物过程的数组
+ 		ArrayList<String> arrListBioprocessWithoutPrefix = new ArrayList<String>();//不含前缀的生物过程的数组
  		
  		ResultSet resultSet = super.findBioprocessFromRaw(strRawWithPrefix, strPredicate);
  		String strResult = ResultSetFormatter.asXMLString(resultSet);
@@ -257,17 +233,14 @@ public class GetRawOutputForRelationNeed extends SPARQLParse{
  	 * @return
  	 */
  	protected ArrayList<String> getBioprocessFromOutput(String strOutput){
- 		
  		String strOutputWithPrefix = "<"+strPrefix+strOutput+">";
  		String strPredicate = "<"+strPrefix+"产物>";
  		OperateFile opfl = new OperateFile();
  		
  		String strFile = strSubFilePath + "bioprocess.xml";
  		
- 		//含有前缀的生物过程的数组
- 		ArrayList<String> arrListBioprocessWithPrefix = new ArrayList<String>();
- 		//不含前缀的生物过程的数组
- 		ArrayList<String> arrListBioprocessWithoutPrefix = new ArrayList<String>();
+ 		ArrayList<String> arrListBioprocessWithPrefix = new ArrayList<String>();   //含有前缀的生物过程的数组
+ 		ArrayList<String> arrListBioprocessWithoutPrefix = new ArrayList<String>();//不含前缀的生物过程的数组
  		
  		ResultSet resultSet = super.findBioprocessFromOutput(strOutputWithPrefix, strPredicate);
  		String strResult = ResultSetFormatter.asXMLString(resultSet);
@@ -293,11 +266,8 @@ public class GetRawOutputForRelationNeed extends SPARQLParse{
 	 * @param arrListForOutput
 	 * @return ArrayList<String>
 	 */
- 	protected ArrayList<String> checkCommon(ArrayList<String>arrListForRaw,ArrayList <String>arrListForOutput)
-	{
- 		//共同的生物物质
- 		ArrayList<String> arrListCommonBiomaterial = new ArrayList<String>();
- 		
+ 	protected ArrayList<String> checkCommon(ArrayList<String>arrListForRaw,ArrayList <String>arrListForOutput){
+ 		ArrayList<String> arrListCommonBiomaterial = new ArrayList<String>();//共同的生物物质
  		for(int i=0;i<arrListForRaw.size();i++)
  		{
  			String strRaw =arrListForRaw.get(i);
@@ -315,17 +285,13 @@ public class GetRawOutputForRelationNeed extends SPARQLParse{
  		return arrListCommonBiomaterial;
 	}
 
- 	/*****
+ 	/**
  	 * @Comments 递归进行查找生物过程,将其进行打印
  	 * @param arrayListBioprocess
  	 * @param strMaterial
- 	 * 
  	 */
  	public String recursiveFindParprocess(ArrayList<String> arrayListBioprocess,String strBioprocess) {
- 		
- 		//存放父过程的数组
- 		ArrayList<String> arrayListParentpro = new ArrayList<String>();
- 		
+ 		ArrayList<String> arrayListParentpro = new ArrayList<String>();//存放父过程的数组
  		if(strBioprocess == null) {
  			return null;
  		}
@@ -356,16 +322,12 @@ public class GetRawOutputForRelationNeed extends SPARQLParse{
  	 * @return
  	 */
  	public Struct recursive(String strBioprocess) {
- 		
  		Struct st = new Struct();
- 		//存放原料的数组
- 		ArrayList<String> arrListRaw = new ArrayList<String>(); 
- 		//存放产物的数组
- 		ArrayList<String> arrListOutput = new ArrayList<String>();
- 		//存放子过程的数组
- 		ArrayList<String> arrListSubprocess = new ArrayList<String>();
- 		//存放共同部分的数组
- 		ArrayList<String> arrListCommonMaterial = new ArrayList<String>();
+ 		
+ 		ArrayList<String> arrListRaw = new ArrayList<String>();           //存放原料的数组
+ 		ArrayList<String> arrListOutput = new ArrayList<String>();        //存放产物的数组
+ 		ArrayList<String> arrListSubprocess = new ArrayList<String>();    //存放子过程的数组
+ 		ArrayList<String> arrListCommonMaterial = new ArrayList<String>();//存放共同部分的数组
  			
  		if(strBioprocess==null)
 			return null;
@@ -384,13 +346,11 @@ public class GetRawOutputForRelationNeed extends SPARQLParse{
  		st.addOutputToStruct(arrListOutput);
  		
  		arrListCommonMaterial = checkCommon(st.struct_arr_raw,st.struct_arr_output);
- 		//求共同生物物质的生物工程
- 		for(int i=0;i<arrListCommonMaterial.size();i++) {
+ 		
+ 		for(int i=0;i<arrListCommonMaterial.size();i++) {                         //求共同生物物质的生物工程
  			OperateFile opfl = new OperateFile();
- 	 		//存放有关使用原料的生物过程
- 	 		ArrayList<String> arrListBioprocessForRaw = new ArrayList<String>();
- 	 		//存放有关生成产物的生物过程
- 	 		ArrayList<String> arrListBioprocessForOutput = new ArrayList<String>();
+ 	 		ArrayList<String> arrListBioprocessForRaw = new ArrayList<String>();   //存放有关使用原料的生物过程
+ 	 		ArrayList<String> arrListBioprocessForOutput = new ArrayList<String>();//存放有关生成产物的生物过程
  	 		
  			String strCommonMaterial = arrListCommonMaterial.get(i);
  			System.out.println(strCommonMaterial);
@@ -426,16 +386,12 @@ public class GetRawOutputForRelationNeed extends SPARQLParse{
  			
  			opfl=null;
  		}
- 		
- 		
  		return st;
  	}
  	
  	public static void main(String[] args) {
  		GetRawOutputForRelationNeed gro = new GetRawOutputForRelationNeed(strFilePath+strFileName);
  		String strBioprocess = "光合作用";
- 		
- 		
  		OperateFile opfl = new OperateFile();
  		opfl.clearFile(strSubFilePath+strRawOutputFileName);
  		gro.recursive(strBioprocess);

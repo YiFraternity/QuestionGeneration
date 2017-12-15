@@ -1,9 +1,23 @@
-package com.factor;
+package com.pigment;
 
 import java.util.ArrayList;
 
 import com.extend.OperateFile;
 
+/***
+ * @Copyright(c),2017-2018
+ * @Project 光合作用自动出题
+ * @Comments 获取外界环境包含的东西对光合作用的影响
+ * @Example 问：叶黄素如何影响光合作用?
+ *          答：叶黄素属于类胡萝卜素，类胡萝卜素属于光合色素，光合色素是水的光解的条件,而水的光解是光反应的子过程，而光反应是光合作用的子过程，
+ *          从而叶黄素影响光合作用。
+ * @JDKversion JDK1.8
+ * @CreatorDate 2017-12-8
+ * @ModifiedBy 刘宇航
+ * @ModifiedDate 2017-12-8
+ * @ModifiedReason 完善代码，对代码进行优化
+ * @Version 2.0.0
+ */
 public class GetProblemForPigment {
 	
 	public GetProblemForPigment() {}
@@ -120,7 +134,7 @@ public class GetProblemForPigment {
 	public static void main(String[] args) {
 		OperateFile opfl = new OperateFile();
 		GetProblemForPigment gpfp = new GetProblemForPigment();
-		String strFilePath = "./src/data/factor/";
+		String strFilePath = "./src/data/pigment/";
 		String strKeywordFileName="Pigment.txt";
 		String strModelProblemFileName="PigmentModel.txt";
 		String strResultFileName = "PigmentProblem.txt";
