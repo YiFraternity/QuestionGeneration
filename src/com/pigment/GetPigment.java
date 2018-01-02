@@ -114,7 +114,7 @@ public class GetPigment {
 		gm.printFactor(strBioprocess, arrListFactor, strFactorFile); //找到条件<光合色素>
 		for(int i=0;i<arrListFactor.size(); i++) {    //得到影响因素，影响因素在arrListFactor中
 			String strEachFactor = arrListFactor.get(i);
-			arrList.add(strEachFactor);               //将条件添加到数组里，得到类似[光合作用  光反应  ATP的合成  光能]
+			arrList.add(strEachFactor);               //将条件添加到数组里，得到类似[光合作用  光反应  ATP的合成  光照]
 			int intLength = arrList.size();
 			arrList.remove(intLength-1);              //去除最后一一个成分
 			recursiveGetSubContent(strEachFactor,arrListPigment,arrList);

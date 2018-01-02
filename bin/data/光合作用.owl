@@ -476,7 +476,7 @@
         <ont:位于 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#类囊体薄膜"/>
         <ont:包括 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#叶绿素"/>
         <ont:包括 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#类胡萝卜素"/>
-        <ont:吸收 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#光能"/>
+        <ont:吸收 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#光照"/>
         <ont:条件 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#水的光解"/>
         <rdfs:name>光合色素</rdfs:name>
     </owl:NamedIndividual>
@@ -513,13 +513,13 @@
     
 
 
-    <!-- http://www.co-ode.org/ontologies/ont.owl#光能 -->
+    <!-- http://www.co-ode.org/ontologies/ont.owl#光照 -->
 
-    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#光能">
+    <owl:NamedIndividual rdf:about="http://www.co-ode.org/ontologies/ont.owl#光照">
         <rdf:type rdf:resource="http://www.co-ode.org/ontologies/ont.owl#物质"/>
         <ont:条件 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#ATP的合成"/>
         <ont:条件 rdf:resource="http://www.co-ode.org/ontologies/ont.owl#水的光解"/>
-        <rdfs:name>光能</rdfs:name>
+        <rdfs:name>光照</rdfs:name>
     </owl:NamedIndividual>
     
 

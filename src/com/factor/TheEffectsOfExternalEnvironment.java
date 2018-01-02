@@ -9,7 +9,7 @@ import com.extend.GetMaterial;
  * @Copyright(c),2017-2018
  * @Project 光合作用自动出题
  * @Comments 得到影响光合作用的条件
- * @Example [光合作用  光反应  ATP的合成  光能]...
+ * @Example [光合作用  光反应  ATP的合成  光照]...
  * @JDKversion JDK1.8
  * @CreatorDate 2017-12-6
  * @ModifiedBy 刘宇航
@@ -29,8 +29,8 @@ public class TheEffectsOfExternalEnvironment {
 
  	/****
  	 * @Comments 得到生物过程及条件
- 	 * @Example [[光合作用  光反应  ATP的合成  光能]
- 	 *           [光合作用  光反应  水的光解  光能]
+ 	 * @Example [[光合作用  光反应  ATP的合成  光照]
+ 	 *           [光合作用  光反应  水的光解  光照]
  	 *           [...]]
  	 * @Flow First:从光合作用向下进行递归
  	 *       Second:判断其子过程是否为空
@@ -62,7 +62,7 @@ public class TheEffectsOfExternalEnvironment {
 		gm.printFactor(strBioprocess, arrListFactor, strFactorFile);     
 		for(int i=0;i<arrListFactor.size(); i++) {          //得到影响因素，影响因素在arrListFactor中
 			String strEachFactor = arrListFactor.get(i);
-			arrListForNeed.add(strEachFactor);              //将条件添加到数组里，得到类似[光合作用  光反应  ATP的合成  光能]
+			arrListForNeed.add(strEachFactor);              //将条件添加到数组里，得到类似[光合作用  光反应  ATP的合成  光照]
 			for(int t=0;t<arrListForNeed.size();t++) {
 				String strEach=arrListForNeed.get(t);
 				System.out.println(strEach);

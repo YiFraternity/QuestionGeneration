@@ -31,13 +31,13 @@ public class SPARQLParse {
 	
 	/***
 	 * Comments:含参构造函数
-	 * @param filepath
+	 * @param strFile
 	 */
-	public SPARQLParse(String filepath){
-		InputStream in = FileManager.get().open(filepath);
+	public SPARQLParse(String strFile){
+		InputStream in = FileManager.get().open(strFile);
 		if(in == null)
 		{
-			throw new IllegalArgumentException("file:"+strFileName+"not found");
+			throw new IllegalArgumentException("file not found");
 		}
 		model=ModelFactory.createOntologyModel(OntModelSpec.OWL_MEM);
 		model.read(in,"");        //read the RDF/XML File
@@ -100,7 +100,7 @@ public class SPARQLParse {
 		String strquery=
 				"SELECT  (?subject As ?生物过程 ) (?Factor As ?条件) "
 				+"WHERE{"
-				+ "OPTIONAL{"+"?subject" + strPredicate + strFactor +"}."
+				+ "OPTIONAL{"+strFactor + strPredicate + "?subject" +"}."
 				+ "}";
 		Query query=QueryFactory.create(strquery);
         qe = QueryExecutionFactory.create(query, model);
@@ -257,6 +257,66 @@ public class SPARQLParse {
 		return results;	
 	}
 	
+	/***
+	 * @comments 查找影响光合作用强度的条件因素
+	 * @param strPredicate
+	 * @param iStage
+	 * @return
+	 */
+	public ResultSet getFactorFromPSYIntensity(String strPredicate,int iStage) {
+		String strMaterial = "<http://www.co-ode.org/ontologies/ont.owl#光合作用强度"+iStage+">";
+		if(model == null)
+			return null;
+		String strquery=
+				"SELECT (?factor As ?影响因素)  "
+				+ "WHERE{"
+				+ "OPTIONAL{"+ "?factor " + strPredicate + strMaterial +" }"
+				+ "}";
+		Query query=QueryFactory.create(strquery);
+        qe = QueryExecutionFactory.create(query, model);
+        ResultSet results = qe.execSelect();//select 类型
+		return results;
+	}
+	
+	/****
+	 * @comments 查找引起结果变化的原因
+	 * @param strResultFactor
+	 * @param strPredicate
+	 * @return
+	 */
+	public ResultSet getInfluencingFactor(String strResultFactor,String strPredicate) {
+		if(model == null)
+			return null;
+		String strquery=
+				"SELECT (?OriginFactor As ?原因因素)  "
+				+ "WHERE{"
+				+ "OPTIONAL{"+ "?OriginFactor " + strPredicate + strResultFactor +" }"
+				+ "}";
+		Query query=QueryFactory.create(strquery);
+        qe = QueryExecutionFactory.create(query, model);
+        ResultSet results = qe.execSelect();//select 类型
+		return results;
+	}
+	
+	/***
+	 * @comments 查找影响因素的变化方向
+	 * @param strFactor
+	 * @param strPredicate
+	 * @return
+	 */
+	public ResultSet howToChange(String strFactor,String strPredicate) {
+		if(model == null)
+			return null;
+		String strquery=
+				"SELECT (?Direction As ?变化方向)  "
+				+ "WHERE{"
+				+ "OPTIONAL{"+ strFactor + strPredicate + "?Direction " +" }"
+				+ "}";
+		Query query=QueryFactory.create(strquery);
+        qe = QueryExecutionFactory.create(query, model);
+        ResultSet results = qe.execSelect();//select 类型
+		return results;
+	}
 	/***
 	 * @Comments 关闭SPARQL查询
 	 * @param 

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<sparql xmlns="http://www.w3.org/2005/sparql-results#">
+  <head>
+    <variable name="变化方向"/>
+  </head>
+  <results>
+    <result>
+      <binding name="变化方向">
+        <uri>http://www.co-ode.org/ontologies/ont.owl#减弱</uri>
+      </binding>
+    </result>
+  </results>
+</sparql>

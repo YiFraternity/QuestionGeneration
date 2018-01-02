@@ -336,4 +336,99 @@ public class GetMaterial {
 		arrListSubsetWithPrefix=null;
 		return arrlistSubsetNoPrefix;
  	}
+ 	
+ 	/***
+ 	 * @comments 查找影响光合作用强度的因素
+ 	 * @param strOWLFile
+ 	 * @param strFile
+ 	 * @param allStage
+ 	 * @return
+ 	 */
+ 	public ArrayList<String> getFactorPSYIntensity(String strOWLFile,String strFile,int allStage){
+ 		SPARQLParse sparql = new SPARQLParse(strOWLFile);
+ 		OperateFile opfl = new OperateFile();
+ 		
+ 		String strPredicate = "<"+strPrefix+"影响>";
+ 		ArrayList<String> arrListFactorWithPrefix = new ArrayList<String>();//含有前缀的子集数组
+ 		ArrayList<String> arrlistFactorNoPrefix = new ArrayList<String>();  //不含前缀的子集数组
+ 		
+ 		for(int i=1;i<=allStage;i++)
+		{
+ 			ResultSet result = sparql.getFactorFromPSYIntensity(strPredicate,i);
+ 			String result_sub = ResultSetFormatter.asXMLString(result);
+ 			opfl.writeToFile(strFile,result_sub);
+ 			arrListFactorWithPrefix=opfl.readXMLFileAboutSubprocess(strFile);
+ 			while(arrListFactorWithPrefix.size()>0) {
+ 				String strEachBioprocess = arrListFactorWithPrefix.get(0).replaceAll(strPrefix, ""); //去掉子集的前缀
+ 				arrListFactorWithPrefix.remove(0);
+ 				arrlistFactorNoPrefix.add(strEachBioprocess);
+ 			}
+		}	
+		opfl=null;
+		sparql = null;
+		arrListFactorWithPrefix=null;
+		return arrlistFactorNoPrefix;
+ 	}
+ 	
+ 	/****
+ 	 * @comments 获得原因因素
+ 	 * @param strOWLFile
+ 	 * @param strFile
+ 	 * @param strFactor
+ 	 * @return
+ 	 */
+ 	public ArrayList<String> getOriginFactor(String strOWLFile,String strFile,String strFactor){
+ 		SPARQLParse sparql = new SPARQLParse(strOWLFile);
+ 		OperateFile opfl = new OperateFile();
+ 		
+ 		String strPredicate = "<"+strPrefix+"影响>";
+ 		String strResultFactor = "<" +strPrefix+strFactor+">";
+ 		ArrayList<String> arrListFactorWithPrefix = new ArrayList<String>();//含有前缀的子集数组
+ 		ArrayList<String> arrlistFactorNoPrefix = new ArrayList<String>();  //不含前缀的子集数组
+ 		
+		ResultSet result = sparql.getInfluencingFactor(strResultFactor, strPredicate);
+		String result_sub = ResultSetFormatter.asXMLString(result);
+		opfl.writeToFile(strFile,result_sub);
+		arrListFactorWithPrefix=opfl.readXMLFileAboutSubprocess(strFile);
+		while(arrListFactorWithPrefix.size()>0) {
+			String strEachBioprocess = arrListFactorWithPrefix.get(0).replaceAll(strPrefix, ""); //去掉子集的前缀
+			arrListFactorWithPrefix.remove(0);
+			arrlistFactorNoPrefix.add(strEachBioprocess);
+		}
+		opfl=null;
+		sparql = null;
+		arrListFactorWithPrefix=null;
+		return arrlistFactorNoPrefix;
+ 	}
+ 	
+ 	/*****
+ 	 * @comments 获得影响因素的变化方向
+ 	 * @param strOWLFile
+ 	 * @param strFile
+ 	 * @param strFactor
+ 	 * @return
+ 	 */
+ 	public ArrayList<String> getChangeDirection(String strOWLFile,String strFile,String strFactor){
+ 		SPARQLParse sparql = new SPARQLParse(strOWLFile);
+ 		OperateFile opfl = new OperateFile();
+ 		
+ 		String strPredicate = "<"+strPrefix+"变化>";
+ 		String strResultFactor = "<" +strPrefix+strFactor+">";
+ 		ArrayList<String> arrListDirectionWithPrefix = new ArrayList<String>();//含有前缀的子集数组
+ 		ArrayList<String> arrlistDirectionNoPrefix = new ArrayList<String>();  //不含前缀的子集数组
+ 		
+		ResultSet result = sparql.howToChange(strResultFactor, strPredicate);
+		String result_sub = ResultSetFormatter.asXMLString(result);
+		opfl.writeToFile(strFile,result_sub);
+		arrListDirectionWithPrefix=opfl.readXMLFileAboutSubprocess(strFile);
+		while(arrListDirectionWithPrefix.size()>0) {
+			String strEachBioprocess = arrListDirectionWithPrefix.get(0).replaceAll(strPrefix, ""); //去掉子集的前缀
+			arrListDirectionWithPrefix.remove(0);
+			arrlistDirectionNoPrefix.add(strEachBioprocess);
+		}
+		opfl=null;
+		sparql = null;
+		arrListDirectionWithPrefix=null;
+		return arrlistDirectionNoPrefix;
+ 	}
 }
