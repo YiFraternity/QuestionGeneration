@@ -107,7 +107,7 @@ public class GetProblemForWhats {
 	public void getPrblemForRandom(String strFile,String strKeywordFile,String strModelFile) {
 		OperateFile opfl = new OperateFile();
 		ArrayList<String> arrGetKeywords= getKeywords(strKeywordFile);
-		for(int i=0;i<arrGetKeywords.size();i=i+3) {
+		for(int i=0;i<arrGetKeywords.size();i=i+2) {
 			ArrayList<String> arrGetModel = parseModel(strModelFile);
 			String strGetModel = getStringForReadom(arrGetModel);
 			String strGetProblem = strGetModel.replaceAll("x1", arrGetKeywords.get(i));
