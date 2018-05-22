@@ -210,10 +210,10 @@ public class GetProblemForRelation {
 		OperateFile opfl = new OperateFile();
 		GetProblemForRelation gpfr = new GetProblemForRelation();
 		
-		String strFilePath = "./src/data/raw_output/";
+		String strFilePath = "./src/data/raw_output/relation/";
 		String strKeywordFileName="raw_output.txt";
 		String strModelProblemFileName="Raw_Relation_Output_Model.txt";
-		String strResultFileName = "RawRelationOutput.txt";
+		String strResultFileName = "problem.txt";
 		
 		String strKeywordFile=strFilePath+strKeywordFileName;
 		String strModeProblemFile=strFilePath+strModelProblemFileName;

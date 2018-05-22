@@ -27,7 +27,7 @@ import com.extend.OperateFile;
  */
 public class GetProblemForFunction {
 	
-	private static final String strFilePath = "./src/data/raw_output/";
+	private static final String strFilePath = "./src/data/raw_output/function/";
 	private static final String strRawFileName= "rawKeyword.txt";
 	private static final String strOutputFileName = "outputKeyword.txt";
 	private static final String strFileName = "FunctionProblem.txt";

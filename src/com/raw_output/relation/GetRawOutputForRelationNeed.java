@@ -37,7 +37,7 @@ public class GetRawOutputForRelationNeed extends SPARQLParse{
 	
 	private static final String strFilePath = "./src/data/";
 	private static final String strFileName = "光合作用.owl";
-	private static final String strSubFilePath="./src/data/raw_output/";
+	private static final String strSubFilePath="./src/data/raw_output/relation/";
 	private static final String strRawOutputFileName = "raw_output.txt";
 	private static final String strPrefix = "http://www.co-ode.org/ontologies/ont.owl#";
 	

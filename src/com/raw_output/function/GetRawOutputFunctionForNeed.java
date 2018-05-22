@@ -23,7 +23,7 @@ import com.extend.Struct;
  */
 public class GetRawOutputFunctionForNeed {
 
-	private static final String strFilePath ="./src/data/raw_output/";
+	private static final String strFilePath ="./src/data/raw_output/function/";
 	private static final String strFileForResultRawName = "rawKeyword.txt";
 	private static final String strFileForResultOutputName = "outputKeyword.txt";
 	private static final String strFileForRawXMLName= "raw.xml";

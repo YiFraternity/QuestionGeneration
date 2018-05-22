@@ -2,10 +2,13 @@
 <sparql xmlns="http://www.w3.org/2005/sparql-results#">
   <head>
     <variable name="生物过程"/>
-    <variable name="父过程"/>
+    <variable name="产物"/>
   </head>
   <results>
     <result>
+      <binding name="生物过程">
+        <uri>http://www.co-ode.org/ontologies/ont.owl#三碳化合物的还原</uri>
+      </binding>
     </result>
   </results>
 </sparql>

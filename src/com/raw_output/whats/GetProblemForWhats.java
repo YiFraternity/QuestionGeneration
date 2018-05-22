@@ -145,7 +145,7 @@ public class GetProblemForWhats {
 		opfl=null;
 	}
 	public static void main(String[] args) {
-		String strFilePath = "./src/data/raw_output/";
+		String strFilePath = "./src/data/raw_output/whats/";
 		String strModelFileName = "raw_output_model.txt";
 		String strKeywordsFileName = "raw_output.txt";
 		String strProblemFileName ="problem.txt";

@@ -1,8 +1,7 @@
 <?xml version="1.0"?>
 <sparql xmlns="http://www.w3.org/2005/sparql-results#">
   <head>
-    <variable name="光合作用过程"/>
-    <variable name="生成物"/>
+    <variable name="子过程"/>
   </head>
   <results>
     <result>
