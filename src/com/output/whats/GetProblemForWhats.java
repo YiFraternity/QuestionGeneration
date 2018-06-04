@@ -1,6 +1,7 @@
 package com.output.whats;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 import com.extend.OperateFile;
 
@@ -93,7 +94,8 @@ public class GetProblemForWhats {
 	 * @return String
 	 */
 	private String getStringForReadom(ArrayList<String> arrStr) {
-		int i=(int)Math.random()*arrStr.size();
+		Random random = new Random();
+		int i=(int)random.nextInt(arrStr.size());
 		return arrStr.get(i);
 	}
 	
@@ -107,8 +109,8 @@ public class GetProblemForWhats {
 	public void getPrblemForRandom(String strFile,String strKeywordFile,String strModelFile) {
 		OperateFile opfl = new OperateFile();
 		ArrayList<String> arrGetKeywords= getKeywords(strKeywordFile);
+		ArrayList<String> arrGetModel = parseModel(strModelFile);
 		for(int i=0;i<arrGetKeywords.size();i=i+2) {
-			ArrayList<String> arrGetModel = parseModel(strModelFile);
 			String strGetModel = getStringForReadom(arrGetModel);
 			String strGetProblem = strGetModel.replaceAll("x1", arrGetKeywords.get(i));
 			String strGetAnswer = strGetProblem.replaceAll("问题","答案");
@@ -117,7 +119,6 @@ public class GetProblemForWhats {
 			strGetAnswer=strGetAnswer.replace("?", "。");
 			opfl.writeToTXT(strGetProblem+"\n", strFile);
 			opfl.writeToTXT(strGetAnswer+"\n", strFile);
-			arrGetModel=null;
 		}
 		arrGetKeywords = null;
 		opfl=null;
@@ -133,9 +134,9 @@ public class GetProblemForWhats {
 		OperateFile opfl = new OperateFile();
 		ArrayList<String> arrGetKeywords= getKeywords(strKeywordFile);
 		//选择第几条语句
-		int j=1;
-		for(int i=0;i<arrGetKeywords.size();i=i+2) {
-			ArrayList<String> arrGetModel = parseModel(strModelFile);
+		int j=0;
+		ArrayList<String> arrGetModel = parseModel(strModelFile);
+		for(int i=0;i<arrGetKeywords.size();i=i+2,j++) {
 			int t=j%(arrGetModel.size());;
 			String strGetModel = arrGetModel.get(t);
 			String strGetProblem = strGetModel.replaceAll("x1", arrGetKeywords.get(i));
@@ -145,7 +146,6 @@ public class GetProblemForWhats {
 			strGetAnswer=strGetAnswer.replace("?", "。");
 			opfl.writeToTXT(strGetProblem+"\n", strFile);
 			opfl.writeToTXT(strGetAnswer+"\n", strFile);
-			arrGetModel=null;
 		}
 		arrGetKeywords = null;
 		opfl=null;
